@@ -53,6 +53,46 @@ img {
     font-family: 'Montserrat';
 }
 
-/* body {
+body {
     background-color: #1E1E1E;
-} */
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* SEARCH SECTION */
+.search-holder {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    gap: 20px;
+}
+
+input {
+    width: 400px;
+    border-radius: 10px;
+    border-style: inherit;
+    height: 20px;
+}
+
+.search-button{
+    padding: 5px;
+    width: 100px;
+    align-self: center;
+    color: #FFFF;
+    font-size: 20px;
+    font-weight: 600;
+    background: linear-gradient(90.8deg, rgba(144, 217, 224, 0.9) 0.2%, rgba(84, 96, 230, 0.9) 100%);
+    border-radius: 10px;
+    border-style:inherit;
+}
+
+.search-button:hover {
+    background: linear-gradient(90.8deg, rgba(84, 96, 230, 0.9) 0.2%, rgba(144, 217, 224, 0.9) 100%);
+}
+
+
+
