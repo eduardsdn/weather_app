@@ -114,9 +114,17 @@ input {
     border-radius: 30px;
 }
 
+@keyframes slide-out {
+    
+    from {left: -400px; z-index: -1; width: 393px;}
+    to {left: 0px; z-index: -1}
+    
+}
+
 .weather-card .right {
-    /* position: relative;
-    left: -30px; */
+    position: relative;
+    /* left: -393px; */
+    /* z-index: -1; */
     padding-top: 28px;
     padding-left: 30px;
     padding-right: 30px;
@@ -127,6 +135,7 @@ input {
     background-color: #222831;;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
+    animation: slide-out 1200ms;
 }
 
 /* WEATHER CARD LEFT */
@@ -203,6 +212,7 @@ input {
 /* FORECAST CARDS */
 
 .week-forecast-cards {
+    z-index: -;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
