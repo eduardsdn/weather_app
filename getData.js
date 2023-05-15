@@ -19,9 +19,12 @@ function getData(userInput){
         })
         .then(function(responseJSON){
             console.log(responseJSON)
-            let weatherAtLoc = new weatherAtLocation(responseJSON.current.last_updated, responseJSON.current.last_updated, responseJSON.location.name, responseJSON.location.country, responseJSON.current.temp_c, responseJSON.current.condition.text, responseJSON.current.precip_mm, responseJSON.current.humidity,responseJSON.current.wind_kph)
-            console.log(weatherAtLoc)
+            let currentWeather = new weatherAtLocation(responseJSON.current.last_updated, responseJSON.current.last_updated, responseJSON.location.name, responseJSON.location.country, responseJSON.current.temp_c, responseJSON.current.condition.text, responseJSON.current.precip_mm, responseJSON.current.humidity,responseJSON.current.wind_kph)
 
+            console.log(currentWeather)
+        })
+        .catch(function(){
+            alert("No matching location found")
         })
 }
 
