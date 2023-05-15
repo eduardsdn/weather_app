@@ -1,13 +1,18 @@
-import getData from './getData.js'
+import { fetchData, getCurrentWeather }from './getData.js'
+import { displayCurrentWeather } from './updateElements.js'
 
 
 const searchButton = document.querySelector(".search-button")
 
-searchButton.addEventListener('click', function(){
+searchButton.addEventListener('click', updateLocation)
+
+function updateLocation() {
     const userInputField = document.querySelector(".user-input-field")
     let userInput = userInputField.value
-    getData(userInput)
+    fetchData(userInput)
     console.log(userInput)
-})
+    // displayCurrentWeather(getCurrentWeather())
+}
+
 
 
