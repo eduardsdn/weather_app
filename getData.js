@@ -1,3 +1,4 @@
+import { displayCurrentWeather } from "./updateElements.js";
 
 function fetchData(userInput){
 
@@ -22,24 +23,23 @@ function fetchData(userInput){
             // console.log(responseJSON)
             let currentWeather = new weatherAtLocation(responseJSON.current.last_updated, responseJSON.current.last_updated, responseJSON.location.name, responseJSON.location.country, responseJSON.current.temp_c, responseJSON.current.condition.text, responseJSON.current.precip_mm, responseJSON.current.humidity,responseJSON.current.wind_kph)
 
-            getCurrentWeather(currentWeather)
-            // console.log(currentWeather)
+            displayCurrentWeather(currentWeather)
             
         })
-        .catch(function(){
-            alert("No matching location found")
-        })
+        // .catch(function(){
+        //     alert("No matching location found")
+        // })
 
     // return currentWeather
 
 }
 
-function getCurrentWeather(currentWeather) {
-    console.log(currentWeather)
-    return currentWeather
-}
+// function getCurrentWeather(currentWeather) {
+//     console.log(currentWeather)
+//     return currentWeather
+// }
 
-export {fetchData, getCurrentWeather}
+export {fetchData}
 
 
 

@@ -110,10 +110,32 @@ input {
     padding-left: 20px;
     width: 393px;
     height: 566px;
-    background: url(/assets/images/sunny_background.jpg);
-    background-position: bottom right;
+    /* background: url(/assets/images/77a266bb54fc65179ec0672d97268c3a.gif);
+    background-position: bottom right; */
+    background-size: 900px 636px;
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
     border-radius: 30px;
+}
+
+.sunny {
+    background: url(/assets/images/sunny_background.jpg);
+    background-position: bottom right;
+}
+
+.rainy{
+    background: url(/assets/images/rainy_background.gif);
+    background-position: bottom right;
+    background-size: 900px 636px;
+}
+
+.cloudy {
+    background: url(/assets/images/cloudy_background.jpg);
+    background-position: top right;
+} 
+
+.snowy {
+    background: url(/assets/images/snowy_background.gif);
+    background-position: top right;
 }
 
 @keyframes slide-out {
