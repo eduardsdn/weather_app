@@ -23,6 +23,8 @@ function fetchData(userInput){
             // console.log(responseJSON)
             let currentWeather = new weatherAtLocation(responseJSON.current.last_updated, responseJSON.current.last_updated, responseJSON.location.name, responseJSON.location.country, responseJSON.current.temp_c, responseJSON.current.condition.text, responseJSON.current.precip_mm, responseJSON.current.humidity,responseJSON.current.wind_kph)
 
+            console.log(responseJSON)
+
             displayCurrentWeather(currentWeather)
             
         })
@@ -44,9 +46,9 @@ function fetchData(userInput){
                 forecastDaysArray.push(forecastDay)
             }
             
-            console.log(forecastDaysArray)
+            // console.log(forecastDaysArray)
 
-            console.log(responseForecastJSON)
+            // console.log(responseForecastJSON)
         })
 
 }

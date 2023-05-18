@@ -222,21 +222,21 @@ input:focus {
 
 /* WEATHER CARD RIGHT */
 
-.precipitation, .humidity, .wind {
+.feelslike, .pressure, .precipitation, .humidity, .wind, .uvindex {
     display: flex;
     justify-content: space-between;
 }
 
-.humidity, .wind {
+.pressure, .precipitation, .feelslike, .humidity, .wind, .uvindex {
     margin-top: 10px;
 }
 
-.precipitation-text, .humidity-text, .wind-text {
+.feelslike-text, .pressure-text, .precipitation-text, .humidity-text, .wind-text, .uvindex-text {
     font-weight: 700;
     font-size: 26px;
 }
 
-.precipitation-number, .humidity-number, .wind-number {
+.feelslike-number, .pressure-number, .precipitation-number, .humidity-number, .wind-number, .uvindex-number {
     font-weight: 500;
     font-size: 24px;
 }
@@ -245,20 +245,20 @@ input:focus {
 
 .week-forecast-cards {
     /* z-index: -; */
-    margin-top: 20px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 7px;
+    gap: 17px;
 }
 
 .forecast-card {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 10px;
-    min-width: 230px;
+    min-width: 360px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -273,9 +273,14 @@ input:focus {
 }
 
 .forecast-weather-condition-icon {
-    width: 40px;
+    width: 50px;
+}
+
+.forecast-day {
+    font-size: 26px;
 }
 
 .forecast-temperature {
+    font-size: 24px;
     font-weight: 700;
 }
