@@ -6,9 +6,12 @@ function displayCurrentWeather(currentWeather) {
     const weatherConditionIcon = document.querySelector('.weather-condition-icon')
     const temperatrue = document.querySelector(".temperature-number")
     const weatherConditionText = document.querySelector('.weather-condition-text')
+    const feelslike = document.querySelector(".feelslike-number")
+    const pressure = document.querySelector(".pressure-number")
     const precipitation = document.querySelector(".precipitation-number")
     const humidity = document.querySelector(".humidity-number")
     const wind = document.querySelector(".wind-number")
+    const uvindex = document.querySelector("uvindex-number")
     const weatherCard = document.querySelector(".weather-card .left")
     
     const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
@@ -53,9 +56,12 @@ function displayCurrentWeather(currentWeather) {
         weatherCard.classList.add("snowy")
     }
 
-    precipitation.innerText = currentWeather.precipitation
+    feelslike.innerText = currentWeather.feelslike + "°C"
+    pressure.innerText = currentWeather.pressure + " " + "mb"
+    precipitation.innerText = currentWeather.precipitation + " " + "mm"
     humidity.innerText = currentWeather.humidity + "%"
     wind.innerText = currentWeather.wind + " " + "km/h"
+    uvindex.innerText = currentWeather.uvindex
 }
 
 

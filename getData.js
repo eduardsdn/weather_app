@@ -2,16 +2,19 @@ import { displayCurrentWeather } from "./updateElements.js";
 
 function fetchData(userInput){
 
-    function weatherAtLocation(day, date, city, country, temperature, condition, precipitation, humidity, wind) {
+    function weatherAtLocation(day, date, city, country, temperature, condition, feelslike, pressure, precipitation, humidity, wind, uvindex) {
         this.day = day;
         this.date = date;
         this.city = city;
         this.country = country;
         this.temperatrue = temperature;
         this.condition = condition;
+        this.feelslike = feelslike;
+        this.pressure = pressure
         this.precipitation = precipitation;
         this.humidity = humidity;
         this.wind = wind
+        this.uvindex = uvindex
     }
 
     fetch(`http://api.weatherapi.com/v1/current.json?key=6eabfbe7e9a8442e92a133724230205&q=${userInput}`)
@@ -21,8 +24,9 @@ function fetchData(userInput){
         })
         .then(function(responseJSON){
             // console.log(responseJSON)
-            let currentWeather = new weatherAtLocation(responseJSON.current.last_updated, responseJSON.current.last_updated, responseJSON.location.name, responseJSON.location.country, responseJSON.current.temp_c, responseJSON.current.condition.text, responseJSON.current.precip_mm, responseJSON.current.humidity,responseJSON.current.wind_kph)
+            let currentWeather = new weatherAtLocation(responseJSON.current.last_updated, responseJSON.current.last_updated, responseJSON.location.name, responseJSON.location.country, responseJSON.current.temp_c, responseJSON.current.condition.text, responseJSON.current.feelslike_c, responseJSON.current.pressure_mb ,responseJSON.current.precip_mm, responseJSON.current.humidity,responseJSON.current.wind_kph, responseJSON.current.uv)
 
+            console.log(currentWeather)
             console.log(responseJSON)
 
             displayCurrentWeather(currentWeather)
