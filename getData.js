@@ -26,18 +26,30 @@ function fetchData(userInput){
             displayCurrentWeather(currentWeather)
             
         })
-        // .catch(function(){
-        //     alert("No matching location found")
-        // })
+        .catch(function(){
+            alert("No matching location found")
+        })
 
-    // return currentWeather
+    fetch(`http://api.weatherapi.com/v1/forecast.json?key=6eabfbe7e9a8442e92a133724230205&q=${userInput}&days=4&aqi=no&alerts=no`)
+        .then(function(response){
+            let responseForecastJSON = response.json()
+            return responseForecastJSON
+        })
+        .then(function(responseForecastJSON){
+            let forecastDaysArray = []
+
+            for(let i = 0; i < responseForecastJSON.forecast.forecastday.length; i++){
+                let forecastDay = new weatherAtLocation(responseForecastJSON.forecast.forecastday[i].date, responseForecastJSON.forecast.forecastday[i].date, responseForecastJSON.location.name, responseForecastJSON.location.country, responseForecastJSON.forecast.forecastday[i].day.avgtemp_c, responseForecastJSON.forecast.forecastday[i].day.condition.text, responseForecastJSON.forecast.forecastday[i].day.totalprecip_mm, responseForecastJSON.forecast.forecastday[i].day.avghumidity, responseForecastJSON.forecast.forecastday[i].day.avghumidity, responseForecastJSON.forecast.forecastday[i].day.maxwind_kph)
+
+                forecastDaysArray.push(forecastDay)
+            }
+            
+            console.log(forecastDaysArray)
+
+            console.log(responseForecastJSON)
+        })
 
 }
-
-// function getCurrentWeather(currentWeather) {
-//     console.log(currentWeather)
-//     return currentWeather
-// }
 
 export {fetchData}
 
