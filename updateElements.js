@@ -11,7 +11,7 @@ function displayCurrentWeather(currentWeather) {
     const precipitation = document.querySelector(".precipitation-number")
     const humidity = document.querySelector(".humidity-number")
     const wind = document.querySelector(".wind-number")
-    const uvindex = document.querySelector("uvindex-number")
+    const uvindex = document.querySelector(".uvindex-number")
     const weatherCard = document.querySelector(".weather-card .left")
     
     const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
