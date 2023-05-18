@@ -1,4 +1,9 @@
+import { isMetric } from "./main.js"
+
 function displayCurrentWeather(currentWeather) {
+
+
+
     const day = document.querySelector(".day")
     const date = document.querySelector(".date")
     const city = document.querySelector(".city")
@@ -25,9 +30,31 @@ function displayCurrentWeather(currentWeather) {
 
     city.innerText = currentWeather.city
     country.innerText = currentWeather.country
-
-    temperatrue.innerText = currentWeather.temperature_c + " " + "°C"
     weatherConditionText.innerText = currentWeather.condition
+    humidity.innerText = currentWeather.humidity + "%"
+    winddir.innerText = currentWeather.winddir
+    uvindex.innerText = currentWeather.uvindex
+
+    if(isMetric === true) {
+        temperatrue.innerText = currentWeather.temperature_c + " " + "°C"
+        feelslike.innerText = currentWeather.feelslike_c + "°C"
+        pressure.innerText = currentWeather.pressure_mb + " " + "mb"
+        precipitation.innerText = currentWeather.precipitation_mm + " " + "mm"
+        visibility.innerHTML = currentWeather.visibility_km + " " + "km"
+        wind.innerText = currentWeather.wind_kph + " " + "km/h"
+        console.log(isMetric)
+    }
+    else{
+        temperatrue.innerText = currentWeather.temperature_f + " " + "°F"
+        feelslike.innerText = currentWeather.feelslike_f + "°F"
+        pressure.innerText = currentWeather.pressure_in + " " + "in"
+        precipitation.innerText = currentWeather.precipitation_in + " " + "in"
+        visibility.innerHTML = currentWeather.visibility_miles + " " + "miles"
+        wind.innerText = currentWeather.wind_mph + " " + "miles/h"
+    }
+    
+
+   
 
     if(currentWeather.condition === "Sunny" || currentWeather.condition === "Clear"){
         weatherConditionIcon.src = "./assets/icons/sunny.svg"
@@ -57,15 +84,6 @@ function displayCurrentWeather(currentWeather) {
         weatherCard.classList.remove("rainy")
         weatherCard.classList.add("snowy")
     }
-
-    feelslike.innerText = currentWeather.feelslike_c + "°C"
-    pressure.innerText = currentWeather.pressure_mb + " " + "mb"
-    precipitation.innerText = currentWeather.precipitation_mm + " " + "mm"
-    humidity.innerText = currentWeather.humidity + "%"
-    visibility.innerHTML = currentWeather.visibility_km
-    wind.innerText = currentWeather.wind_kph + " " + "km/h"
-    winddir.innerText = currentWeather.winddir
-    uvindex.innerText = currentWeather.uvindex
 }
 
 

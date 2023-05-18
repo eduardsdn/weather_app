@@ -58,9 +58,12 @@ body {
     background-color: #1E1E1E;
 }
 
-/* .main {
-    
-} */
+.main {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
 
 
 /* SEARCH FORM */
@@ -85,7 +88,7 @@ input {
 }
 
 input:focus {
-    outline-color: #222831;
+    outline: none;
 }
 
 .search-button{
@@ -170,6 +173,7 @@ input:focus {
     animation: slide-out 1200ms;
 }
 
+
 /* WEATHER CARD LEFT */
 
 .day {
@@ -241,45 +245,9 @@ input:focus {
     font-size: 24px;
 }
 
-/* FORECAST CARDS */
-
-/* .week-forecast-cards {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 17px;
-}
-
-.forecast-card {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
-    min-width: 360px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #343d49;
+.change-units {
+    margin-top: 20px;
+    font-size: 16px;
     cursor: pointer;
-    transition: background 2s;
+    text-decoration: underline;
 }
-
-.forecast-card:hover {
-    background: linear-gradient(90.8deg, rgba(144, 217, 224, 0.9) 0.2%, rgba(84, 96, 230, 0.9) 100%);
-    background-color:rgba(84, 96, 230, 0.9);
-}
-
-.forecast-weather-condition-icon {
-    width: 50px;
-}
-
-.forecast-day {
-    font-size: 26px;
-}
-
-.forecast-temperature {
-    font-size: 24px;
-    font-weight: 700;
-} */
