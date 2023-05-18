@@ -10,8 +10,10 @@ function displayCurrentWeather(currentWeather) {
     const pressure = document.querySelector(".pressure-number")
     const precipitation = document.querySelector(".precipitation-number")
     const humidity = document.querySelector(".humidity-number")
+    const visibility = document.querySelector(".visibility-number")
     const wind = document.querySelector(".wind-number")
     const uvindex = document.querySelector(".uvindex-number")
+    const winddir = document.querySelector(".winddir-number")
     const weatherCard = document.querySelector(".weather-card .left")
     
     const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
@@ -24,7 +26,7 @@ function displayCurrentWeather(currentWeather) {
     city.innerText = currentWeather.city
     country.innerText = currentWeather.country
 
-    temperatrue.innerText = currentWeather.temperatrue + " " + "°C"
+    temperatrue.innerText = currentWeather.temperature_c + " " + "°C"
     weatherConditionText.innerText = currentWeather.condition
 
     if(currentWeather.condition === "Sunny" || currentWeather.condition === "Clear"){
@@ -56,11 +58,13 @@ function displayCurrentWeather(currentWeather) {
         weatherCard.classList.add("snowy")
     }
 
-    feelslike.innerText = currentWeather.feelslike + "°C"
-    pressure.innerText = currentWeather.pressure + " " + "mb"
-    precipitation.innerText = currentWeather.precipitation + " " + "mm"
+    feelslike.innerText = currentWeather.feelslike_c + "°C"
+    pressure.innerText = currentWeather.pressure_mb + " " + "mb"
+    precipitation.innerText = currentWeather.precipitation_mm + " " + "mm"
     humidity.innerText = currentWeather.humidity + "%"
-    wind.innerText = currentWeather.wind + " " + "km/h"
+    visibility.innerHTML = currentWeather.visibility_km
+    wind.innerText = currentWeather.wind_kph + " " + "km/h"
+    winddir.innerText = currentWeather.winddir
     uvindex.innerText = currentWeather.uvindex
 }
 
