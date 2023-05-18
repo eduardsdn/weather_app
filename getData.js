@@ -17,6 +17,12 @@ function fetchData(userInput){
         this.uvindex = uvindex
     }
 
+    function forecastDay(day, condition, temperatrue){
+        this.day = day;
+        this.condition = condition;
+        this.temperatrue = temperatrue
+    }
+
     fetch(`http://api.weatherapi.com/v1/current.json?key=6eabfbe7e9a8442e92a133724230205&q=${userInput}`)
         .then(function(response){
             let responseJSON = response.json()
@@ -26,7 +32,7 @@ function fetchData(userInput){
             // console.log(responseJSON)
             let currentWeather = new weatherAtLocation(responseJSON.current.last_updated, responseJSON.current.last_updated, responseJSON.location.name, responseJSON.location.country, responseJSON.current.temp_c, responseJSON.current.condition.text, responseJSON.current.feelslike_c, responseJSON.current.pressure_mb ,responseJSON.current.precip_mm, responseJSON.current.humidity,responseJSON.current.wind_kph, responseJSON.current.uv)
 
-            console.log(currentWeather)
+            // console.log(currentWeather)
             console.log(responseJSON)
 
             displayCurrentWeather(currentWeather)
@@ -36,24 +42,26 @@ function fetchData(userInput){
             alert("No matching location found")
         })
 
-    fetch(`http://api.weatherapi.com/v1/forecast.json?key=6eabfbe7e9a8442e92a133724230205&q=${userInput}&days=4&aqi=no&alerts=no`)
-        .then(function(response){
-            let responseForecastJSON = response.json()
-            return responseForecastJSON
-        })
-        .then(function(responseForecastJSON){
-            let forecastDaysArray = []
+    // fetch(`http://api.weatherapi.com/v1/forecast.json?key=6eabfbe7e9a8442e92a133724230205&q=${userInput}&days=4&aqi=no&alerts=no`)
+    //     .then(function(response){
+    //         let responseForecastJSON = response.json()
+    //         return responseForecastJSON
+    //     })
+    //     .then(function(responseForecastJSON){
+    //         let forecastDaysArray = []
 
-            for(let i = 0; i < responseForecastJSON.forecast.forecastday.length; i++){
-                let forecastDay = new weatherAtLocation(responseForecastJSON.forecast.forecastday[i].date, responseForecastJSON.forecast.forecastday[i].date, responseForecastJSON.location.name, responseForecastJSON.location.country, responseForecastJSON.forecast.forecastday[i].day.avgtemp_c, responseForecastJSON.forecast.forecastday[i].day.condition.text, responseForecastJSON.forecast.forecastday[i].day.totalprecip_mm, responseForecastJSON.forecast.forecastday[i].day.avghumidity, responseForecastJSON.forecast.forecastday[i].day.avghumidity, responseForecastJSON.forecast.forecastday[i].day.maxwind_kph)
+    //         for(let i = 1; i < responseForecastJSON.forecast.forecastday.length; i++){
+    //             // let forecastDay = new weatherAtLocation(responseForecastJSON.forecast.forecastday[i].date, responseForecastJSON.forecast.forecastday[i].date, responseForecastJSON.location.name, responseForecastJSON.location.country, responseForecastJSON.forecast.forecastday[i].day.avgtemp_c, responseForecastJSON.forecast.forecastday[i].day.condition.text, responseForecastJSON.forecast.forecastday[i].day.totalprecip_mm, responseForecastJSON.forecast.forecastday[i].day.avghumidity, responseForecastJSON.forecast.forecastday[i].day.avghumidity, responseForecastJSON.forecast.forecastday[i].day.maxwind_kph)
 
-                forecastDaysArray.push(forecastDay)
-            }
+
+    
+    //             forecastDaysArray.push(forecastDay)
+    //         }
             
-            // console.log(forecastDaysArray)
+    //         // console.log(forecastDaysArray)
 
-            // console.log(responseForecastJSON)
-        })
+    //         console.log(responseForecastJSON)
+    //     })
 
 }
 
