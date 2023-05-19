@@ -1,8 +1,32 @@
 import { displayCurrentWeather } from "./updateElements.js";
 
+function getGeolocation(){
+    
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+    function successCallback(position) {
+        let latitude = position.coords.latitude
+        let longitude = position.coords.longitude
+        console.log(latitude, longitude)
+        
+        fetch(`https://api.geoapify.com/v1/geocode/reverse?lat=${latitude}&lon=${longitude}&format=json&apiKey=dcee8d54b0ab4a4cb1379ca7fd6abf2a`)
+            .then(function(response){
+                let responseJSON = response.json()
+                return responseJSON
+            })
+            .then(function(responseJSON){
+                console.log(responseJSON)
+                fetchData(responseJSON.results[0].city)
+            })
+    }
+    function errorCallback(){
+        console.log("No geo")
+    }
+}
+
 function fetchData(userInput){
 
     function weatherAtLocation(day, date, city, country, temperature_c, temperature_f, condition, feelslike_c, feelslike_f, pressure_mb, pressure_in, precipitation_mm, precipitation_in, humidity, visibility_km, visibility_miles, wind_kph, wind_mph, winddir, uvindex) {
+        
         this.day = day;
         this.date = date;
         this.city = city;
@@ -45,7 +69,7 @@ function fetchData(userInput){
         })
 }
 
-export {fetchData}
+export {fetchData, getGeolocation}
 
 
 
