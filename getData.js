@@ -19,7 +19,7 @@ function getGeolocation(){
             })
     }
     function errorCallback(){
-        console.log("No geo")
+        fetchData("Brussels")
     }
 }
 
