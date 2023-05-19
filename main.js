@@ -1,4 +1,4 @@
-import { fetchData, getGeolocation } from './getData.js'
+import { fetchData, getGeolocation } from '/getData.js'
 
 let geoActive = true
 let isMetric = true

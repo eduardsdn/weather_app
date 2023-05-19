@@ -1,9 +1,9 @@
-import { displayCurrentWeather } from "./updateElements.js";
+import { displayCurrentWeather } from "/updateElements.js";
 
 function getGeolocation(){
     
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-    
+
     function successCallback(position) {
         let latitude = position.coords.latitude
         let longitude = position.coords.longitude
