@@ -56,28 +56,28 @@ function displayCurrentWeather(currentWeather) {
    
 
     if(currentWeather.condition === "Sunny" || currentWeather.condition === "Clear"){
-        weatherConditionIcon.src = "./assets/icons/sunny.svg"
+        weatherConditionIcon.src = "/assets/icons/sunny.svg"
         weatherCard.classList.remove("cloudy")
         weatherCard.classList.remove("rainy")
         weatherCard.classList.remove("snowy")
         weatherCard.classList.add("sunny")
     }
     else if(currentWeather.condition === "Partly cloudy" || currentWeather.condition === "Overcast" || currentWeather.condition === "Mist") {
-        weatherConditionIcon.src = "./assets/icons/cloudy.svg"
+        weatherConditionIcon.src = "/assets/icons/cloudy.svg"
         weatherCard.classList.remove("sunny")
         weatherCard.classList.remove("rainy")
         weatherCard.classList.remove("snowy")
         weatherCard.classList.add("cloudy")
     }
     else if(currentWeather.condition.includes("Rain") || currentWeather.condition.includes("rain") || currentWeather.condition.includes("drizzle")){
-        weatherConditionIcon.src = "./assets/icons/rainy.svg"
+        weatherConditionIcon.src = "/assets/icons/rainy.svg"
         weatherCard.classList.remove("sunny")
         weatherCard.classList.remove("cloudy")
         weatherCard.classList.remove("snowy")
         weatherCard.classList.add("rainy")
     }
     else if(currentWeather.condition.includes("snow")) {
-        weatherConditionIcon.src = "./assets/icons/snowy.svg"
+        weatherConditionIcon.src = "/assets/icons/snowy.svg"
         weatherCard.classList.remove("sunny")
         weatherCard.classList.remove("cloudy")
         weatherCard.classList.remove("rainy")
