@@ -3,6 +3,7 @@ import { displayCurrentWeather } from "./updateElements.js";
 function getGeolocation(){
     
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+    
     function successCallback(position) {
         let latitude = position.coords.latitude
         let longitude = position.coords.longitude
@@ -18,6 +19,7 @@ function getGeolocation(){
                 fetchData(responseJSON.results[0].city)
             })
     }
+
     function errorCallback(){
         fetchData("Brussels")
     }
@@ -55,14 +57,8 @@ function fetchData(userInput){
             return responseJSON
         })
         .then(function(responseJSON){
-            // console.log(responseJSON)
             let currentWeather = new weatherAtLocation(responseJSON.current.last_updated, responseJSON.current.last_updated, responseJSON.location.name, responseJSON.location.country, responseJSON.current.temp_c, responseJSON.current.temp_f, responseJSON.current.condition.text, responseJSON.current.feelslike_c, responseJSON.current.feelslike_f, responseJSON.current.pressure_mb, responseJSON.current.pressure_in, responseJSON.current.precip_mm, responseJSON.current.precip_in, responseJSON.current.humidity, responseJSON.current.vis_km, responseJSON.current.vis_miles, responseJSON.current.wind_kph, responseJSON.current.wind_mph, responseJSON.current.wind_dir, responseJSON.current.uv)
-
-            // console.log(currentWeather)
-            console.log(responseJSON)
-
             displayCurrentWeather(currentWeather)
-            
         })
         .catch(function(){
             alert("No matching location found")

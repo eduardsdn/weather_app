@@ -42,7 +42,6 @@ function displayCurrentWeather(currentWeather) {
         precipitation.innerText = currentWeather.precipitation_mm + " " + "mm"
         visibility.innerHTML = currentWeather.visibility_km + " " + "km"
         wind.innerText = currentWeather.wind_kph + " " + "km/h"
-        console.log(isMetric)
     }
     else{
         temperatrue.innerText = currentWeather.temperature_f + " " + "°F"

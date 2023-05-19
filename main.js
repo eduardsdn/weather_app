@@ -15,7 +15,6 @@ function updateLocation() {
     userInput = userInputField.value
     geoActive = false
     fetchData(userInput)
-    console.log(userInput)
 }
 
 function changeUnits() {
@@ -43,7 +42,6 @@ function changeUnits() {
             updateLocation(userInput)
         }
     }
-    console.log(isMetric)
 }
 
 getGeolocation()

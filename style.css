@@ -98,14 +98,14 @@ input:focus {
     color: #FFFF;
     font-size: 20px;
     font-weight: 600;
-    background: linear-gradient(90.8deg, rgba(144, 217, 224, 0.9) 0.2%, rgba(84, 96, 230, 0.9) 100%);
+    background: linear-gradient(90.8deg, rgb(112, 156, 160) 0.2%, rgba(86, 89, 124, 0.9) 100%);
     border-radius: 10px;
     border-style:inherit;
     cursor: pointer;
 }
 
 .search-button:hover {
-    background: linear-gradient(90.8deg, rgba(84, 96, 230, 0.9) 0.2%, rgba(144, 217, 224, 0.9) 100%);
+    background: linear-gradient(90.8deg, rgba(78, 116, 119, 0.9) 0.2%, rgba(113, 119, 177, 0.9) 100%);
 }
 
 /* WEATHER CARD GENERAL*/
@@ -150,10 +150,8 @@ input:focus {
 }
 
 @keyframes slide-out {
-    
     from {left: -400px; z-index: -1; width: 393px;}
     to {left: 0px; z-index: -1}
-    
 }
 
 .weather-card .right {
