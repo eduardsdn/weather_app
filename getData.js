@@ -72,7 +72,7 @@ function fetchData(userInput) {
   }
 
   fetch(
-    `http://api.weatherapi.com/v1/current.json?key=6eabfbe7e9a8442e92a133724230205&q=${userInput}`
+    `https://api.weatherapi.com/v1/current.json?key=6eabfbe7e9a8442e92a133724230205&q=${userInput}`
   )
     .then(function (response) {
       let responseJSON = response.json();
