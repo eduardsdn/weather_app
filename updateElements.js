@@ -1,4 +1,4 @@
-import { isMetric } from "/main.js";
+import { isMetric } from "./main.js";
 
 function displayCurrentWeather(currentWeather) {
   const day = document.querySelector(".day");

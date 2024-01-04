@@ -1,4 +1,4 @@
-import { displayCurrentWeather } from "/updateElements.js";
+import { displayCurrentWeather } from "./updateElements.js";
 
 function getGeolocation() {
   navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
