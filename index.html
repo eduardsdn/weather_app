@@ -1,87 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /> -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Weather App</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="main">
+      <form class="search-form">
+        <input
+          type="text"
+          class="user-input-field"
+          placeholder="Search location.."
+        />
+        <button type="button" class="search-button">Search</button>
+      </form>
 
-        <form class="search-form">
-            <input type="text" class="user-input-field" placeholder="Search location..">
-            <button type="button" class="search-button">Search</button>
-        </form>
-
-        <div class="weather-card">
-
-            <div class="left">
-                <div class="day"></div>
-                <div class="date"></div>
-                <div class="location">
-                    <img src="/assets/icons/location.svg">
-                    <div class="location-text"><p class="city"><span>,</span></p><p class="country"></p></div>
-                </div>
-
-                <img src="/assets/icons/sunny.svg" class="weather-condition-icon">
-                <div class="temperature">
-                    <div class="temperature-number"></div>
-                    <div class="weather-condition-text"></div>
-                </div>
+      <div class="weather-card">
+        <div class="left">
+          <div class="day"></div>
+          <div class="date"></div>
+          <div class="location">
+            <img src="./assets/icons/location.svg" />
+            <div class="location-text">
+              <p class="city"><span>,</span></p>
+              <p class="country"></p>
             </div>
+          </div>
 
-            <div class="right">
-                <div class="feelslike data-right">
-                    <p class="feelslike-text data-right-text">Feels like</p>
-                    <div class="feelslike-number data-right-number"></div>
-                </div>
-
-                <div class="pressure data-right">
-                    <p class="pressure-text data-right-text">Pressure</p>
-                    <div class="pressure-number data-right-number"></div>
-                </div>
-
-                <div class="precipitation data-right">
-                    <p class="precipitation-text data-right-text">Precipitation</p>
-                    <div class="precipitation-number data-right-number"></div>
-                </div>
-
-                <div class="humidity data-right">
-                    <p class="humidity-text data-right-text">Humidity</p>
-                    <div class="humidity-number data-right-number"></div>
-                </div>
-
-                <div class="visibility data-right">
-                    <p class="visibility-text data-right-text">Visibility</p>
-                    <div class="visibility-number data-right-number"></div>
-                </div>
-
-                <div class="wind data-right">
-                    <p class="wind-text data-right-text">Wind</p>
-                    <div class="wind-number data-right-number"></div>
-                </div>
-
-                <div class="winddir data-right">
-                    <p class="winddir-text data-right-text">Wind direction</p>
-                    <div class="winddir-number data-right-number"></div>
-                </div>
-
-                <div class="uvindex data-right">
-                    <p class="uvindex-text data-right-text">UV Index</p>
-                    <div class="uvindex-number data-right-number"></div>
-                </div>
-
-            </div>
-
+          <img src="./assets/icons/sunny.svg" class="weather-condition-icon" />
+          <div class="temperature">
+            <div class="temperature-number"></div>
+            <div class="weather-condition-text"></div>
+          </div>
         </div>
 
-        <div class="change-units">Switch to <span class="unit-name">imperial</span> units</div>
+        <div class="right">
+          <div class="feelslike data-right">
+            <p class="feelslike-text data-right-text">Feels like</p>
+            <div class="feelslike-number data-right-number"></div>
+          </div>
 
+          <div class="pressure data-right">
+            <p class="pressure-text data-right-text">Pressure</p>
+            <div class="pressure-number data-right-number"></div>
+          </div>
+
+          <div class="precipitation data-right">
+            <p class="precipitation-text data-right-text">Precipitation</p>
+            <div class="precipitation-number data-right-number"></div>
+          </div>
+
+          <div class="humidity data-right">
+            <p class="humidity-text data-right-text">Humidity</p>
+            <div class="humidity-number data-right-number"></div>
+          </div>
+
+          <div class="visibility data-right">
+            <p class="visibility-text data-right-text">Visibility</p>
+            <div class="visibility-number data-right-number"></div>
+          </div>
+
+          <div class="wind data-right">
+            <p class="wind-text data-right-text">Wind</p>
+            <div class="wind-number data-right-number"></div>
+          </div>
+
+          <div class="winddir data-right">
+            <p class="winddir-text data-right-text">Wind direction</p>
+            <div class="winddir-number data-right-number"></div>
+          </div>
+
+          <div class="uvindex data-right">
+            <p class="uvindex-text data-right-text">UV Index</p>
+            <div class="uvindex-number data-right-number"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="change-units">
+        Switch to <span class="unit-name">imperial</span> units
+      </div>
     </div>
 
     <script type="module" src="main.js"></script>
-</body>
+  </body>
 </html>
