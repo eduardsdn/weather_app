@@ -6,6 +6,13 @@ let userInput;
 
 const searchButton = document.querySelector(".search-button");
 const changeUnitsButton = document.querySelector(".change-units");
+const form = document.querySelector("form");
+form.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    updateLocation();
+  }
+});
 
 searchButton.addEventListener("click", updateLocation);
 changeUnitsButton.addEventListener("click", changeUnits);

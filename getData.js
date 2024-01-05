@@ -6,7 +6,6 @@ function getGeolocation() {
   function successCallback(position) {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
-    console.log(latitude, longitude);
 
     fetch(
       `https://api.geoapify.com/v1/geocode/reverse?lat=${latitude}&lon=${longitude}&format=json&apiKey=dcee8d54b0ab4a4cb1379ca7fd6abf2a`
@@ -16,7 +15,6 @@ function getGeolocation() {
         return responseJSON;
       })
       .then(function (responseJSON) {
-        console.log(responseJSON);
         fetchData(responseJSON.results[0].city);
       });
   }
