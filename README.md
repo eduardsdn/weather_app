@@ -1,5 +1,5 @@
-# weather_app
+<b>A weather monitoring application that displays weather data at requested location or user's current location.</b>
 
-Widget like weather application that shows realtime weather at requested location.
-Design inspiration: https://www.figma.com/community/file/1176173521127853129/Simple-Weather-App-Design by "000Bo"
-APIs: Weather API: https://www.weatherapi.com/, Geoapify: https://www.geoapify.com/
+- Built using open-source APIs.
+- Supports switching between Metric and Imperial measurement systems.
+- APIs: Weather API: https://www.weatherapi.com/, Geoapify: https://www.geoapify.com/
